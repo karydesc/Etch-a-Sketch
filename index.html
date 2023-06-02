@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <div class="flex-container">
@@ -15,11 +16,13 @@
 
                 </div>
                 <div class="buttons">
-                    <button>Black</button>
-                    <button>White</button>
+                    <button class ='black'>Black</button>
+                    <button class="white">White</button>
                     <button>Random</button>
-                    <button>Reset</button>
+                    <button class="reset">Reset</button>
                 </div>
+                <input type="text" class="text" placeholder="Size of Board" value="16">
+                <input type="color" class="color" value="white">
             </div>
 
 
