@@ -13,16 +13,25 @@ whiteb.onclick=() =>{
 blackb.onclick=() =>{
     dcolor='black'
 }
-resetb.onclick=reset()
-
-
+resetb.onclick=()=>{
+    reset();
+}
+colorselec.addEventListener("change",x =>{
+    bcolor=x.target.value;
+    updateBackground(bcolor)
+})
+dimselect.addEventListener("change",x=>{
+    updateGrid(x.target.value);
+    updateBackground(bcolor)
+})
 
 
 
 function updateBackground(inp){
     const all = document.querySelectorAll(".boarddiv");
     all.forEach(x => {
-        x.style.background= `${inp}`;
+        if (x.marked!=1){
+        x.style.background= `${inp}`;}
     } )
 }
 function updateGrid(inp){
@@ -39,14 +48,16 @@ function updateGrid(inp){
 }
 function draw(){
     this.style.background=`${dcolor}`;
+    this["marked"]=1
 }
 function reset(){
-    console.log("entered")
     const all = document.querySelectorAll(".boarddiv");
     all.forEach(x =>{
+        x.marked=0
         x.style.background=`${bcolor}`
     })
 }
 updateGrid(16);
 updateBackground('white');
+
 
