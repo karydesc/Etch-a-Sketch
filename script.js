@@ -1,8 +1,10 @@
 let bcolor='white'
 let dcolor='black'
+let enable=false;
 const board=document.querySelector(".board");
 const colorselec=document.querySelector(".color");
 const dimselect=document.querySelector(".text");
+const dcolorselect=document.querySelector("#draw");
 const whiteb=document.querySelector(".white");
 const blackb=document.querySelector(".black");
 const resetb=document.querySelector(".reset")
@@ -24,10 +26,19 @@ dimselect.addEventListener("change",x=>{
     updateGrid(x.target.value);
     updateBackground(bcolor)
 })
-
+dcolorselect.addEventListener("change",x=>{
+    dcolor=x.target.value;
+})
+document.addEventListener("keydown",x=>{
+    console.log(x.key)
+    if (x.key==68) {
+        enable=!enable;
+    }
+})
 
 
 function updateBackground(inp){
+    
     const all = document.querySelectorAll(".boarddiv");
     all.forEach(x => {
         if (x.marked!=1){
@@ -47,8 +58,9 @@ function updateGrid(inp){
     }
 }
 function draw(){
-    this.style.background=`${dcolor}`;
-    this["marked"]=1
+    if (enable==true)
+    {this.style.background=`${dcolor}`;
+    this["marked"]=1}
 }
 function reset(){
     const all = document.querySelectorAll(".boarddiv");
