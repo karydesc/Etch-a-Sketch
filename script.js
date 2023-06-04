@@ -30,7 +30,6 @@ dcolorselect.addEventListener("change",x=>{
     dcolor=x.target.value;
 })
 document.addEventListener("keydown",x=>{
-    console.log(x.key)
     if (x.key==68) {
         enable=!enable;
     }
