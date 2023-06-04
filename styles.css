@@ -4,6 +4,6 @@
     display: grid;
 
 }
-.body{
-    display:flex;
+.flex-container{
+    display:block;
 }
