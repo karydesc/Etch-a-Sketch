@@ -29,10 +29,13 @@ dimselect.addEventListener("change",x=>{
 dcolorselect.addEventListener("change",x=>{
     dcolor=x.target.value;
 })
-document.addEventListener("keydown",x=>{
-    if (x.key=="d"||x.key=="D") {
-        enable=!enable;
-    }
+document.addEventListener("mousedown",x=>{
+    
+    enable=true;
+    
+})
+document.addEventListener("mouseup",x=>{
+    enable=false;
 })
 
 
